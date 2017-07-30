@@ -24,7 +24,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Stateless
-@Path("/mostracliente")
+@Path("/cliente")
 @Produces(MediaType.APPLICATION_XML)
 public class WebServizio {
 
@@ -56,14 +56,7 @@ public class WebServizio {
         }
     }
         
-    
+  
 
-    @POST
-    @Path("insertCliente")
-    @Consumes(MediaType.TEXT_PLAIN)
-    public void insertCliente() {
-        System.out.println("Entrato in insertCliente()");
-
-    }
 
 }

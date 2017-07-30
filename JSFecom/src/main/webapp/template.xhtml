@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Template</title>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <h:outputStylesheet library="bootstrap" name="css/bootstrap.min.css" />
+        <h:outputScript library="bootstrap" name="js/bootstrap.min.js" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+
+            <!--Header -->
+            <div id="header" class="row">
+                <div class="col-md-12">
+                    <ui:insert name="header"/>
+                </div>
+            </div>
+
+            <!--Content-->
+            <div id="content" class="row">
+                <div clas="col-md-12">
+                    <ui:insert name="content"/>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div id="footer" class="row">
+                <div class="col-md-12">
+                    <ui:insert name="footer"/>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

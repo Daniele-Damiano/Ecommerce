@@ -14,16 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.ejb.EJBException;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
-import javax.persistence.NoResultException;
-import javax.ws.rs.NotFoundException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.GenericType;
 
 @Named
 @RequestScoped
@@ -32,8 +28,7 @@ public class ControllerServlet {
     private Cliente cliente;
     private List<Cliente> cli;
     private Client client;
-    private final String URI = "http://localhost:8080/JSFecom/rs";
-    private final String URI1 = "http://localhost:8080/JSFecom/rs/mostracliente/login/";
+    private final String URI = "http://localhost:8080/JSFecom/rs/cliente/login/";
 
      
      @PostConstruct
@@ -92,17 +87,12 @@ public class ControllerServlet {
          * base all'email e la password inserita nel form login
          */
         
-        cliente = client.target(URI1).path(cliente.getEmail()).path(cliente.getPassword()).request().get(Cliente.class);
+        cliente = client.target(URI).path(cliente.getEmail()).path(cliente.getPassword()).request().get(Cliente.class);
         if(cliente == null){
             
             return "ClientNotFound";
         }
-            
-
-        System.out.println("INVOCAZIONE CLIENTBUILDER OK");
-        cli.add(cliente);//viene inserito nell arraylist per la durata della sessione
-        System.out.println("CLIENTE AGGIUNTO");
-       
+         cli.add(cliente);//viene inserito nell arraylist per la durata della sessione
          return navigation;
     }
 
