@@ -7,7 +7,8 @@
         <title>Admin Page</title>
     </h:head>
     <h:body>
-        <ui:composition template="template.xhtml">
+        <ui:composition template="/template.xhtml">
+            
             <!--header -->
             <ui:define name="header">
                 <h1>Nav Bar</h1>
@@ -16,9 +17,8 @@
 
             <!--Content -->
             <ui:define name="content">
-                <h:link value="Inserisci Articolo" outcome=""/>
-                <h:link value="" outcome=""/>
-
+                
+                <h:link value="Inserisci Articolo" outcome="inserisci_articolo"/>
             </ui:define>
 
 
